@@ -1,0 +1,38 @@
+{
+  "test_metrics_threshold_0.5": {
+    "threshold": 0.5,
+    "accuracy": 0.8308345827086456,
+    "precision": 0.6237623762376238,
+    "recall_sensitivity": 0.6286031042128604,
+    "specificity": 0.8896774193548387,
+    "f1": 0.6261733848702374,
+    "roc_auc": 0.865919104498963,
+    "pr_auc": 0.6774372733074365,
+    "ppv": 0.6237623762376238,
+    "npv": 0.8916909149692854,
+    "balanced_accuracy": 0.7591402617838495,
+    "tn": 2758,
+    "fp": 342,
+    "fn": 335,
+    "tp": 567
+  },
+  "test_metrics_threshold_youden": {
+    "threshold": 0.2466791868209839,
+    "accuracy": 0.7881059470264867,
+    "precision": 0.52,
+    "recall_sensitivity": 0.7782705099778271,
+    "specificity": 0.7909677419354839,
+    "f1": 0.6234458259325044,
+    "roc_auc": 0.865919104498963,
+    "pr_auc": 0.6774372733074365,
+    "ppv": 0.52,
+    "npv": 0.9245852187028658,
+    "balanced_accuracy": 0.7846191259566555,
+    "tn": 2452,
+    "fp": 648,
+    "fn": 200,
+    "tp": 702
+  },
+  "youden_threshold_from_val": 0.2466791868209839,
+  "best_val_auc": 0.857517601494735
+}
