@@ -1,0 +1,117 @@
+experiment:
+  name: rsna_conditional_classifier
+  task: classification
+  mode: conditional
+  tags:
+    - rsna
+    - pneumonia
+    - conditional
+    - xai
+    - uncertainty
+#n
+model:
+  name: conditional_classifier
+  backbone: resnet50
+  pretrained: true
+  in_channels: 3
+  num_classes: 2
+  global_pool: avg
+  dropout: 0.30
+  classifier_hidden_dim: 256
+
+condition:
+  enabled: true
+  use_condition: true
+  feature_dim: 7
+  embedding_dim: 64
+  hidden_dim: 128
+  fusion_type: concat
+  fusion_dropout: 0.20
+  use_batchnorm: true
+
+train:
+  batch_size: 16
+  epochs: 30
+  shuffle: true
+  drop_last: false
+  balance_strategy: weighted_sampler
+  early_stopping:
+    enabled: true
+    patience: 7
+    monitor: val_auc
+    mode: max
+
+optimizer:
+  name: adamw
+  lr: 0.0003
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+
+scheduler:
+  name: cosine
+  t_max: 30
+  eta_min: 0.000001
+  warmup_epochs: 2
+
+loss:
+  name: cross_entropy
+  use_class_weights: true
+  label_smoothing: 0.02
+  focal:
+    enabled: false
+    gamma: 2.0
+    alpha: 0.25
+
+augmentation:
+  resize: [512, 512]
+  horizontal_flip: 0.5
+  shift_scale_rotate:
+    enabled: true
+    shift_limit: 0.03
+    scale_limit: 0.05
+    rotate_limit: 10
+    p: 0.5
+  random_brightness_contrast:
+    enabled: true
+    brightness_limit: 0.10
+    contrast_limit: 0.10
+    p: 0.3
+  clahe:
+    enabled: false
+    clip_limit: 2.0
+    tile_grid_size: [8, 8]
+    p: 0.2
+  normalize: true
+
+evaluation:
+  primary_metric: auc
+  save_best_by: val_auc
+  threshold: 0.5
+  metrics:
+    - auc
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - specificity
+    - sensitivity
+    - pr_auc
+  confusion_matrix: true
+  per_class_metrics: true
+
+inference:
+  batch_size: 16
+  tta:
+    enabled: false
+    num_runs: 4
+  uncertainty:
+    enabled: true
+    method: mc_dropout
+    num_samples: 8
+
+xai:
+  enable_gradcam: true
+  target_layer: layer4
+  overlay_alpha: 0.35
+  save_heatmaps: true
+  save_overlays: true

@@ -1,0 +1,85 @@
+experiment:
+  name: handcrafted_feature_extraction
+  task: feature_extraction
+#n
+feature_extraction:
+  enabled: true
+  input_size: [512, 512]
+  use_normalized_image: true
+  use_lung_mask: true
+  use_roi_mask: true
+  compute_per_lung: false
+
+intensity_features:
+  enabled: true
+  features:
+    - mean_intensity
+    - std_intensity
+    - min_intensity
+    - max_intensity
+    - median_intensity
+    - entropy
+
+texture_features:
+  enabled: false
+  features:
+    - glcm_contrast
+    - glcm_energy
+    - glcm_homogeneity
+    - glcm_correlation
+
+geometry_features:
+  enabled: true
+  features:
+    - lung_area_ratio
+    - asymmetry_index
+    - roi_area_ratio
+    - bbox_area_ratio
+    - bbox_count
+
+quality_features:
+  enabled: true
+  features:
+    - qc_score
+    - roi_confidence
+    - image_mean
+    - image_std
+
+burden_features:
+  enabled: true
+  features:
+    - burden_score
+    - opacity_fraction
+    - bilateral_flag
+    - multi_roi_flag
+
+condition_output:
+  enabled: true
+  selected_features:
+    - qc_score
+    - lung_area_ratio
+    - asymmetry_index
+    - roi_confidence
+    - burden_score
+    - mean_intensity
+    - entropy
+
+output:
+  save_csv: true
+  save_json_summary: true
+  file_name: radiomics_features.csv
+  merged_file_name: rsna_patient_metadata_enriched.csv
+  merge_with_metadata: true
+  include_patient_id: true
+
+normalization:
+  enabled: true
+  method: zscore
+  fill_missing: 0.0
+  clip_outliers: true
+  clip_range: [-5.0, 5.0]
+
+validation:
+  drop_nan_only_rows: true
+  clip_inf_values: true
+  assert_selected_features_exist: true

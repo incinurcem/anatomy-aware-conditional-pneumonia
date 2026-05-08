@@ -1,0 +1,87 @@
+experiment:
+  name: lung_segmentation
+  task: segmentation
+  tags:
+    - lung-mask
+    - roi
+    - helper-model
+#n
+model:
+  name: unet
+  encoder_name: resnet34
+  encoder_weights: imagenet
+  in_channels: 3
+  out_classes: 1
+  activation: sigmoid
+  decoder_channels: [256, 128, 64, 32, 16]
+
+train:
+  batch_size: 8
+  epochs: 40
+  shuffle: true
+  drop_last: false
+  early_stopping:
+    enabled: true
+    patience: 8
+    monitor: val_dice
+    mode: max
+
+optimizer:
+  name: adamw
+  lr: 0.0003
+  weight_decay: 0.0001
+
+scheduler:
+  name: cosine
+  t_max: 40
+  eta_min: 0.000001
+  warmup_epochs: 2
+
+loss:
+  name: bce_dice
+  bce_weight: 0.50
+  dice_weight: 0.50
+  smooth: 1.0
+
+augmentation:
+  resize: [512, 512]
+  horizontal_flip: 0.5
+  shift_scale_rotate:
+    enabled: true
+    shift_limit: 0.03
+    scale_limit: 0.05
+    rotate_limit: 10
+    p: 0.5
+  elastic_transform:
+    enabled: false
+    alpha: 1.0
+    sigma: 50.0
+    alpha_affine: 20.0
+    p: 0.2
+  normalize: true
+
+thresholds:
+  mask_threshold: 0.5
+  min_area_ratio: 0.01
+
+evaluation:
+  primary_metric: dice
+  save_best_by: val_dice
+  metrics:
+    - dice
+    - iou
+    - precision
+    - recall
+  save_sample_predictions: true
+  num_visual_samples: 20
+
+postprocess:
+  remove_small_components: true
+  min_component_area: 256
+  fill_holes: true
+  keep_largest_components: 2
+
+outputs:
+  save_binary_masks: true
+  save_probability_maps: false
+  save_overlays: true

@@ -1,0 +1,301 @@
+project:
+  name: mai_project
+  root: "/content/drive/MyDrive/Spring Semester/medical image analysis project"
+
+dataset:
+  image_size: 512
+
+data:
+  train_dicom_dir: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_train_images"
+  test_dicom_dir: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_test_images"
+
+  train_labels_csv: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_train_labels.csv"
+  detailed_class_info_csv: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_detailed_class_info.csv"
+  metadata_csv: "/content/drive/MyDrive/Spring Semester/dataset/metadata_clean.csv"
+  sample_submission_csv: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_sample_submission.csv"
+
+  train_png_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/images_png"
+  test_png_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/images_png"
+
+  processed_pre_root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre"
+  train_root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train"
+  test_root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test"
+
+  train_manifest_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/manifests/preprocess_manifest.csv"
+  test_manifest_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/manifests/preprocess_manifest.csv"
+
+  train_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/metadata/preprocess_summary.json"
+  test_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/metadata/preprocess_summary.json"
+
+  master_dataset_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/rsna_master_dataset.csv"
+  split_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/all.csv"
+
+  train_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/plain/train/masks"
+  test_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/plain/test/masks"
+
+  roi_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi"
+  classifier_roi_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs"
+
+  rsna_dataset_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits"
+
+outputs:
+  rsna_dataset_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits"
+  
+
+rsna:
+  root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/rsna"
+
+  train_dicom_dir: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_train_images"
+  test_dicom_dir: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_test_images"
+
+  label_csv: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_train_labels.csv"
+  detailed_class_csv: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_detailed_class_info.csv"
+  metadata_csv: "/content/drive/MyDrive/Spring Semester/dataset/metadata_clean.csv"
+  sample_submission_csv: "/content/drive/MyDrive/Spring Semester/dataset/stage_2_sample_submission.csv"
+
+  dataset_mappings_json: "/content/drive/MyDrive/Spring Semester/dataset/pneumonia-challenge-dataset-mappings_2018.json"
+  annotations_original_json: "/content/drive/MyDrive/Spring Semester/dataset/pneumonia-challenge-annotations-original_2018.json"
+  annotations_adjudicated_json: "/content/drive/MyDrive/Spring Semester/dataset/pneumonia-challenge-annotations-adjudicated-kaggle_2018.json"
+
+  dataset_description_pdf: "/content/drive/MyDrive/Spring Semester/dataset/RSNA-2018-Pneumonia-Detection-Challenge-Dataset-Description.pdf"
+
+preprocess:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre"
+  output_image_size: 512
+
+  train_root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train"
+  test_root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test"
+
+  train_images_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/images_png"
+  test_images_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/images_png"
+
+  train_metadata_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/metadata"
+  test_metadata_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/metadata"
+
+  train_manifests_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/manifests"
+  test_manifests_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/manifests"
+
+  train_manifest_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/manifests/preprocess_manifest.csv"
+  test_manifest_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/manifests/preprocess_manifest.csv"
+
+  train_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/metadata/preprocess_summary.json"
+  test_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/metadata/preprocess_summary.json"
+
+  train_labels_copy_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/metadata/labels_copy.csv"
+  train_class_info_copy_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/metadata/class_info_copy.csv"
+
+images:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/images_png"
+  png_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/images_png"
+  train_png_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/train/images_png"
+  test_png_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/processed_pre/test/images_png"
+
+  preview_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/cache/previews"
+  failed_conversions_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/cache/failed_conversions"
+
+splits:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits"
+  train_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/train.csv"
+  val_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/val.csv"
+  test_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/test.csv"
+  all_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/all.csv"
+
+  master_dataset_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/rsna_master_dataset.csv"
+  patient_metadata_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/rsna_patient_metadata.csv"
+  bbox_metadata_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/rsna_bbox_metadata.csv"
+  split_distribution_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/rsna_split_distribution.csv"
+  class_distribution_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/rsna_class_distribution.csv"
+  split_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/rsna_split_summary.json"
+
+segmentation:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi"
+
+  train_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/plain/train/masks"
+  test_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/plain/test/masks"
+
+  train_predictions_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/plain/train"
+  test_predictions_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/plain/test"
+
+segmentation_data:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation"
+
+  montgomery_root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/montgomery"
+  montgomery_images_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/montgomery/images"
+  montgomery_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/montgomery/masks"
+
+  shenzhen_root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/shenzhen"
+  shenzhen_images_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/shenzhen/images"
+  shenzhen_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/shenzhen/masks"
+
+  jsrt_root: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/jsrt"
+  jsrt_images_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/jsrt/images"
+  jsrt_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/segmentation/jsrt/masks"
+
+roi:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi"
+  roi_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi"
+
+  source: "nnunet"
+  margin_ratio: 0.05
+
+  roi_images_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/roi_images"
+  roi_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/roi_masks"
+  roi_metadata_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/roi_metadata.csv"
+  output_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/roi_metadata.csv"
+
+  train_roi_images_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/train/images"
+  test_roi_images_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/test/images"
+
+  train_roi_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/train/masks"
+  test_roi_masks_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/test/masks"
+
+  train_roi_metadata_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/train/train_roi_metadata.csv"
+  test_roi_metadata_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/test/test_roi_metadata.csv"
+
+  train_roi_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/train/train_roi_summary.json"
+  test_roi_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/test/test_roi_summary.json"
+
+  unet_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/unet/plain"
+  unet_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/unet/conditional"
+
+  unetpp_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/unetpp/plain"
+  unetpp_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/unetpp/conditional"
+
+  attn_unet_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/attn_unet/plain"
+  attn_unet_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/attn_unet/conditional"
+
+  transunet_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/transunet/plain"
+  transunet_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/transunet/conditional"
+
+  deeplabv3p_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/deeplabv3p/plain"
+  deeplabv3p_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/deeplabv3p/conditional"
+
+  nnunet_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/plain"
+  nnunet_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/conditional"
+  nnunet_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi/nnunet/plain"
+
+classifier_inputs:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs"
+
+  full_image_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/full"
+  metadata_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/metadata"
+
+  unet_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/unet/plain"
+  unet_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/unet/conditional"
+
+  unetpp_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/unetpp/plain"
+  unetpp_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/unetpp/conditional"
+
+  attn_unet_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/attn_unet/plain"
+  attn_unet_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/attn_unet/conditional"
+
+  transunet_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/transunet/plain"
+  transunet_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/transunet/conditional"
+
+  deeplabv3p_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/deeplabv3p/plain"
+  deeplabv3p_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/deeplabv3p/conditional"
+
+  nnunet_plain_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/nnunet/plain"
+  nnunet_conditional_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs/nnunet/conditional"
+
+features:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features"
+
+  radiomics_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/radiomics_features"
+  burden_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/burden_features"
+  qc_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/qc_features"
+  roi_quality_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/roi_quality_features"
+  shape_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/shape_features"
+
+  radiomics_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/radiomics_features/radiomics_features.csv"
+  burden_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/burden_features/burden_features.csv"
+  qc_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/qc_features/qc_features.csv"
+  roi_quality_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/roi_quality_features/roi_quality_features.csv"
+  shape_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/shape_features/shape_features.csv"
+
+  merged_features_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/merged_features.csv"
+
+radiomics:
+  output_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/radiomics_features/radiomics_features.csv"
+
+  train_output_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/radiomics_features/train_radiomics_features.csv"
+  test_output_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/features/radiomics_features/test_radiomics_features.csv"
+
+  train_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/radiomics/train_radiomics_summary.json"
+  test_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/radiomics/test_radiomics_summary.json"
+
+cache:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/cache"
+
+checkpoints:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints"
+
+  classifier_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier"
+  segmentation_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/segmentation"
+  calibration_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/calibration"
+  uncertainty_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/uncertainty"
+
+  unet_classifier_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier/unet"
+  unetpp_classifier_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier/unetpp"
+  attn_unet_classifier_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier/attn_unet"
+  transunet_classifier_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier/transunet"
+  deeplabv3p_classifier_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier/deeplabv3p"
+  nnunet_classifier_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier/nnunet"
+
+classifier:
+  checkpoints_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier"
+  outputs_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/classifier"
+  checkpoint: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier/best_model.pt"
+  best_checkpoint: "/content/drive/MyDrive/Spring Semester/medical image analysis project/checkpoints/classifier/best_model.pt"
+
+results:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results"
+
+  classifier_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/classifier"
+  segmentation_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/segmentation"
+  calibration_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/calibration"
+  uncertainty_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/uncertainty"
+  gradcam_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/gradcam"
+  radiomics_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/radiomics"
+  burden_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/burden"
+  qc_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/qc"
+  roi_quality_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/roi_quality"
+  shape_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/shape"
+  model_selection_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/model_selection"
+  reports_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/reports"
+
+  unet_results_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/classifier/unet"
+  unetpp_results_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/classifier/unetpp"
+  attn_unet_results_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/classifier/attn_unet"
+  transunet_results_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/classifier/transunet"
+  deeplabv3p_results_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/classifier/deeplabv3p"
+  nnunet_results_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/classifier/nnunet"
+
+outputs:
+  rsna_master_dataset_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/rsna_master_dataset.csv"
+  rsna_dataset_summary_json: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/reports/rsna_dataset_summary.json"
+  classifier_inputs: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/classifier_inputs"
+  roi_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/roi"
+
+uncertainty:
+  output_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/uncertainty"
+  output_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/uncertainty/uncertainty_results.csv"
+
+tables:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/reports"
+  final_tables_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/reports/final_tables.csv"
+  summary_metrics_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/reports/summary_metrics.csv"
+  ablation_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/reports/ablation_results.csv"
+  model_comparison_csv: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/reports/model_comparison.csv"
+
+deployment:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/demo"
+  uploads_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/demo/uploads"
+  outputs_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/demo/outputs"
+  cache_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/demo/cache"
+
+logs:
+  root_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/logs"
+  train_logs_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/logs/train"
+  eval_logs_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/logs/eval"
+  inference_logs_dir: "/content/drive/MyDrive/Spring Semester/medical image analysis project/results/logs/inference"

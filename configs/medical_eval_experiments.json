@@ -1,0 +1,88 @@
+{
+  "experiments": [
+    {
+      "experiment_name": "plain",
+      "input_mode": "plain",
+      "conditional": false,
+      "test_csv": "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/test_classifier_ready.csv",
+      "checkpoint": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/classifier_plain/best_model.pth",
+      "output_dir": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/full_medical_eval/plain",
+      "model_name": "resnet50",
+      "label_col": "label",
+      "img_size": 224,
+      "batch_size": 16,
+      "num_workers": 12,
+      "dropout": 0.3
+    },
+    {
+      "experiment_name": "roi",
+      "input_mode": "roi",
+      "conditional": false,
+      "test_csv": "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/test_classifier_ready.csv",
+      "checkpoint": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/classifier_roi/best_model.pth",
+      "output_dir": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/full_medical_eval/roi",
+      "model_name": "resnet50",
+      "label_col": "label",
+      "img_size": 224,
+      "batch_size": 16,
+      "num_workers": 12,
+      "dropout": 0.3
+    },
+    {
+      "experiment_name": "masked_roi",
+      "input_mode": "masked_roi",
+      "conditional": false,
+      "test_csv": "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/splits/test_classifier_ready.csv",
+      "checkpoint": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/classifier_masked_roi/best_model.pth",
+      "output_dir": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/full_medical_eval/masked_roi",
+      "model_name": "resnet50",
+      "label_col": "label",
+      "img_size": 224,
+      "batch_size": 16,
+      "num_workers": 12,
+      "dropout": 0.3
+    },
+    {
+      "experiment_name": "plain+condition",
+      "input_mode": "plain",
+      "conditional": true,
+      "test_csv": "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/condition_data/safe_condition_vectors_all/test/test_conditional_safe.csv",
+      "checkpoint": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/conditional_plain_safe/best_model.pth",
+      "output_dir": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/full_medical_eval/plain_condition",
+      "model_name": "resnet50",
+      "label_col": "label",
+      "img_size": 224,
+      "batch_size": 16,
+      "num_workers": 12,
+      "dropout": 0.3
+    },
+    {
+      "experiment_name": "roi+condition",
+      "input_mode": "roi",
+      "conditional": true,
+      "test_csv": "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/condition_data/safe_condition_vectors_all/test/test_conditional_safe.csv",
+      "checkpoint": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/conditional_roi_safe/best_model.pth",
+      "output_dir": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/full_medical_eval/roi_condition",
+      "model_name": "resnet50",
+      "label_col": "label",
+      "img_size": 224,
+      "batch_size": 16,
+      "num_workers": 12,
+      "dropout": 0.3
+    },
+    {
+      "experiment_name": "masked_roi+condition",
+      "input_mode": "masked_roi",
+      "conditional": true,
+      "test_csv": "/content/drive/MyDrive/Spring Semester/medical image analysis project/data/condition_data/safe_condition_vectors_all/test/test_conditional_safe.csv",
+      "checkpoint": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/conditional_masked_roi_safe/best_model.pth",
+      "output_dir": "/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs/full_medical_eval/masked_roi_condition",
+      "model_name": "resnet50",
+      "label_col": "label",
+      "img_size": 224,
+      "batch_size": 16,
+      "num_workers": 12,
+      "dropout": 0.3
+    }
+  ]
+}
