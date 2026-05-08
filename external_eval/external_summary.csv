@@ -1,0 +1,3 @@
+pipeline,auc_mean,auc_std,pr_auc_mean,n_samples
+Otsu,0.947,0.0072,0.9631,624
+nnUNet,0.9085,0.0497,0.9289,624

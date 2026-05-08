@@ -1,0 +1,7 @@
+n_samples,n_positive,auc,auc_95ci_low,auc_95ci_high,pr_auc,pipeline,seed,model_path
+624,390,0.8567061143984221,0.8223595239753082,0.8869624490960779,0.8850203906187956,nnUNet,42,/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs_seeds_nnUNet/classifier_plain/seed_42/best_model.pth
+624,390,0.9557199211045365,0.9401222064515473,0.9691112830976798,0.9713392443945663,nnUNet,123,/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs_seeds_nnUNet/classifier_plain/seed_123/best_model.pth
+624,390,0.9130506245890861,0.8864137087992547,0.936991251885023,0.9301984981664632,nnUNet,7,/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs_seeds_nnUNet/classifier_plain/seed_7/best_model.pth
+624,390,0.9398422090729783,0.9201279136827513,0.9563243354808395,0.9598759007437793,Otsu,42,/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs_seeds_otsu/classifier_plain/seed_42/best_model.pth
+624,390,0.9469647161954855,0.9298546160003218,0.9622653255740392,0.964018297063423,Otsu,123,/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs_seeds_otsu/classifier_plain/seed_123/best_model.pth
+624,390,0.9541858426473812,0.9363458694189692,0.9693550385260663,0.9653463523466138,Otsu,7,/content/drive/MyDrive/Spring Semester/medical image analysis project/outputs_seeds_otsu/classifier_plain/seed_7/best_model.pth
