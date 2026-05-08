@@ -1,0 +1,12 @@
+streamlit>=1.30
+torch>=2.0
+torchvision>=0.15
+numpy
+pandas
+matplotlib
+scikit-learn
+scipy
+pillow
+opencv-python-headless
+pydicom
+pyngrok>=7.0
